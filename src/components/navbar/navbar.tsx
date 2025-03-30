@@ -9,12 +9,11 @@ export const Nav = () => {
    //const {isDark, type} = useTheme();
    const menuItems = [
       {title: 'Página Inicial', href: '/'},
-      {title: 'Sobre', href: '/sobre'},
-      {title: 'Produtos', href: '/produtos'},
       {title: 'Serviços', href: '/servicos'},
       {title: 'Eventos', href: '/eventos'},
-      {title: 'Blog', href: '/blog'},
       {title: 'Contato', href: '/contato'},
+      {title: 'Blog', href: '/blog'},
+      {title: 'Sobre', href: '/sobre'},
    ];
 
    return (
@@ -30,7 +29,7 @@ export const Nav = () => {
          <div className='flex items-center justify-between w-[60%] float-end'>
             {menuItems.map((item) => (
                <ul key={item.title} className='w-full flex text-start gap-4'>
-                  <Link href={item.title} className='hover:font-semibold hover:text-[#026865] transition duration-500 trasi'>
+                  <Link href={item.href} className='hover:font-semibold hover:text-[#026865] transform-cpu transition duration-300'>
                      {item.title}
                   </Link>
                </ul>

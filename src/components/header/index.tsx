@@ -1,7 +1,7 @@
 import React from 'react';
 import {CheckIcon} from '../icons/CheckIcon';
 
-export const Hero = () => {
+export const Header = () => {
    return (
       <>
          <div className='w-full flex gap-4 px-6 items-center justify-center pt-20'>
@@ -23,17 +23,6 @@ export const Hero = () => {
 
                <div className='flex flex-wrap gap-2'>
                   <button className='py-2 px-3 bg-[#026865] text-white rounded-lg cursor-pointer'>Entre em Contacto</button>
-               </div>
-               <div className='flex flex-wrap gap-4 py-2 text-sm'>
-                  <div className='flex items-center justify-center'>
-                     <CheckIcon /> No credit card required.
-                  </div>
-                  <div className='flex items-center justify-center'>
-                     <CheckIcon /> 14-day free trial.
-                  </div>
-                  <div className='flex items-center justify-center'>
-                     <CheckIcon /> Cancel anytime.
-                  </div>
                </div>
             </div>
             <img src="mock.png" className='flex bg-contain w-[775px] h-[500px] items-center justify-center' />            
