@@ -1,6 +1,12 @@
 import React from 'react';
 import {BoxIcon} from '../../components/icons/BoxIcon';
 import {FeatureIcon} from '../../components/icons/FeatureIcon';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Sobre - Traços Gest",
+    description: "A Traços Gest é uma empresa de consultoria de gestão e negócios, especializada em apoiar as organizações a alcançarem seu potencial através de soluções personalizadas e estratégicas.",
+  };
 
 export default function About () {
    return (

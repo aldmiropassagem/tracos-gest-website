@@ -47,8 +47,9 @@ export const Footer = () => {
                   <h5 className='font-bold'>Contactos</h5>
                   <ul className='gap-2'>
                      <li>
-                        923 xxx xxx
+                        (+244) 923352514
                      </li>
+                     <li><strong>Endereço:</strong> Rua João Belo, Benguela, Benguela</li>
                   </ul>
                </div>
             </div>

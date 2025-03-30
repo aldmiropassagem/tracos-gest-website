@@ -4,14 +4,14 @@ export const Header = () => {
    return (
       <>
          <div className='w-full flex gap-4 px-6 items-center justify-center pt-20'>
-            <div className='flex flex-col gap-5 text-black dark:text-white'>
+            <div className='flex flex-col gap-5 text-black'>
                <div className='w-[600px]'>
                   <h1 className='inline text-5xl font-bold'>
                      A sua melhor Consultoria em {' '}
                   </h1>
                  
                   <h1 className='inline text-5xl font-bold text-[#026865]'>
-                     Gestão
+                     Gestão.
                   </h1>
                </div>
 
