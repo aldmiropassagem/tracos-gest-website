@@ -2,7 +2,6 @@ import React from 'react';
 import {Logo} from './logo';
 //import {useTheme as useNextTheme} from 'next-themes';
 //import {useTheme} from 'nextui-org/react';
-import {GithubIcon} from '../icons/GithubIcon';
 import Link from 'next/link';
 
 export const Nav = () => {
