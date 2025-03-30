@@ -18,7 +18,7 @@ export const Nav = () => {
 
    return (
       <nav
-         className='w-full h-20 flex items-center justify-between bg-white dark:bg-gray-900 dark:text-gray-200 shadow-md px-10'
+         className='w-full h-20 flex items-center justify-between bg-white shadow-md px-10'
       >
          <div className='flex items-center gap-2'>
             <Link href='/'>
