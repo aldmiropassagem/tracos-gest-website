@@ -1,5 +1,4 @@
 import React from 'react';
-import {CheckIcon} from '../icons/CheckIcon';
 
 export const Header = () => {
    return (
