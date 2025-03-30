@@ -48,7 +48,6 @@ export const Partners = () => {
 
          </section>
 
-         <hr className='absolute inset-0 left-0 mt-5' />
       </>
    );
 };

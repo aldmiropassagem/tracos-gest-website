@@ -77,10 +77,7 @@ export const Features3 = () => {
                      </div>
                </div>
             </div>
-         </div>
-
-         <hr className='absolute inset-p left-0 mt-5' />
-            
+         </div>            
       </>
    );
 };
