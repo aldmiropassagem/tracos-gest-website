@@ -1,5 +1,6 @@
 import React from 'react';
-import {Logo} from '../navbar/logo';
+import { Logo } from '../navbar/logo';
+import Image from 'next/image';
 
 export const Partners = () => {
    return (
@@ -9,41 +10,28 @@ export const Partners = () => {
                Clientes & Parceiros
             </h2>
             <p className='w-[800px] text-lg text-center mb-6'>
-              Conheça os nossos principais Clientes e Parceiros de negócios.
+               Conheça os nossos principais Clientes e Parceiros de negócios.
             </p>
-            <div className='flex gap-6 content-center w-full whitespace-pre'>
+            <div className='flex gap-x-10 justify-center items-center w-full'>
                <div className='flex flex-col items-center justify-center'>
-                  <div className='flex justify-center items-center'>
-                     <Logo />
-                     <p className="text-lg font-semibold">
-                        Company 1
-                     </p>
-                  </div>
+                  <Logo />
+                  <p className="text-lg font-semibold">
+                     Company 1
+                  </p>
                </div>
                <div className='flex flex-col items-center justify-center'>
-                  <div className='flex justify-center items-center'>
-                     <Logo />
-                     <p className="text-lg font-semibold">
-                        Company 1
-                     </p>
-                  </div>
+                  <Image
+                     src='/assets/acacias-logo.png'
+                     alt='Acácias Branding'
+                     width={20}
+                     height={20}
+                     className='w-full h-full'
+                     sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                     loading='eager'
+                     quality={100}
+                     style={{ objectFit: "cover" }}
+                  />
                </div>
-               <div className='flex flex-col items-center justify-center'>
-                  <div className='flex justify-center items-center'>
-                     <Logo />
-                     <p className="text-lg font-semibold">
-                        Company 1
-                     </p>
-                  </div>
-               </div>
-               <div className='flex flex-col items-center justify-center'>
-                  <div className='flex justify-center items-center'>
-                     <Logo />
-                     <p className="text-lg font-semibold">
-                        Company 1
-                     </p>
-                  </div>
-               </div>               
             </div>
 
          </section>
