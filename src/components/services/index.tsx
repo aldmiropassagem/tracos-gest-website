@@ -1,5 +1,8 @@
+'use client'
+
 import React from 'react';
 import { BoxIcon } from '../icons/BoxIcon';
+import { FadeInOnScrollProps } from '../FadeInScroll';
 
 export const Services = () => {
 
@@ -73,9 +76,10 @@ export const Services = () => {
 
 
    return (
-      <section id="servicos" className="w-full flex flex-col items-center justify-center relative pt-20 pb-10 px-6 sm:px-6 lg:px-10 xl:px-20 border-b-2 border-[#026865]">
+      <section id="servicos" className="w-full flex flex-col items-center justify-center relative pt-20 pb-10 px-6 sm:px-6 lg:px-10 xl:px-20  border-b-2 border-[#026865]">
+         
          <div className="flex flex-col justify-center items-center max-w-screen-xl mx-auto">
-
+            <FadeInOnScrollProps direction='up'>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 text-[#026865]">
                Nossos Serviços
             </h2>
@@ -86,11 +90,13 @@ export const Services = () => {
                alcançar novos níveis de sucesso. Nossa abordagem personalizada garante que cada solução seja adaptada às
                especificidades e desafios de cada cliente.
             </p>
+            </FadeInOnScrollProps>
 
+            <FadeInOnScrollProps direction='up'>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10 w-full">
-               {servicelist.map((item) => (
+               {servicelist.map((item, index) => (
                   <div
-                     key={item.title}
+                     key={`${item.title}-${index}`}
                      className="p-6 flex flex-col gap-5 border-2 border-gray-300 rounded-xl hover:border-[#026865] transition-all duration-700 shadow-sm hover:shadow-md text-sm bg-white"
                   >
                      <div className="flex flex-col h-full">
@@ -110,7 +116,9 @@ export const Services = () => {
                   </div>
                ))}
             </div>
+            </FadeInOnScrollProps>
          </div>
+         
       </section>
 
    );

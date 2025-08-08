@@ -62,13 +62,34 @@ export const Nav = () => {
             </div>
 
             <div className='hidden lg:flex relative items-center justify-between w-[60%] float-end'>
-               {menuItems.map((item) => (
-                  <li key={item.title} className='w-full flex text-start gap-4'>
-                     <Link href={item.href} className={`hover:font-semibold hover:text-[#026865] transform-cpu transition-all duration-700 ${isActive(item.href)}`}>
+               <ul className='w-full flex text-start gap-4'> 
+            {menuItems.map((item)=>{
+               const isHashLink = item.href.startsWith('/#');
+               const targetId = isHashLink ? item.href.replace('/#', '') : null;
+
+               const handleClick = (e: React.MouseEvent)=>{
+                  if (isHashLink && targetId) {
+                     e.preventDefault();
+                     const target = document.getElementById(targetId);
+                     if (target) {
+                        target.scrollIntoView({behavior:'smooth'});
+                     }
+                     closeMobileMenu();
+                  }
+               };
+               return(
+                  <li key = {item.title} className='w-full flex text-start'>
+                     <Link
+                     href={item.href}
+                     onClick={handleClick}
+                     className={`hover:font-semibold hover:text-[#026865] transform-cpu transition-all duration-700 ${isActive(item.href)}`}
+                     >
                         {item.title}
                      </Link>
                   </li>
-               ))}
+               )
+            })}
+               </ul>
             </div>
          </nav>
 
@@ -88,18 +109,35 @@ export const Nav = () => {
                   </button>
                </div>
 
-               <div className="mt-6 flex flex-col space-y-4">
-                  {menuItems.map((item) => (
-                     <Link
-                        key={item.title}
-                        href={item.href}
-                        onClick={closeMobileMenu}
-                        className={`hover:font-semibold hover:text-[#026865] transition duration-300 text-base ${isActive(item.href)}`}
-                     >
-                        {item.title}
-                     </Link>
-                  ))}
-               </div>
+              <div className="mt-6 flex flex-col space-y-4">
+   {menuItems.map((item) => {
+      const isHashLink = item.href.startsWith('/#');
+      const targetId = isHashLink ? item.href.replace('/#', '') : null;
+
+      const handleClick = (e: React.MouseEvent) => {
+         if (isHashLink && targetId) {
+            e.preventDefault();
+            const target = document.getElementById(targetId);
+            if (target) {
+               target.scrollIntoView({ behavior: 'smooth' });
+            }
+            closeMobileMenu();
+         }
+      };
+
+      return (
+         <Link
+            key={item.title}
+            href={item.href}
+            onClick={handleClick}
+           className={`hover:font-semibold hover:text-[#026865] transform-cpu transition-all duration-700 ${isActive(item.href)}`}
+         >
+            {item.title}
+         </Link>
+      );
+   })}
+</div>
+
             </DialogPanel>
          </Dialog>
 
