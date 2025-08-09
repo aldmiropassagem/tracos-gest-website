@@ -16,6 +16,8 @@ const slides = [
       description: 'Maximize os seus resultados com nossa consultoria especializada.',
       image: 'assets/banner-2.webp',
    },
+
+
 ];
 
 export const Header = () => {
@@ -69,6 +71,7 @@ export const Header = () => {
                      className={`w-4 h-4 rounded-full cursor-pointer ${index === activeIndex ? 'bg-[#07EA37]' : 'bg-white'} transition-all duration-700`}
                      onClick={() => goToSlide(index)}
                   />
+                  
                ))}
             </div>
             

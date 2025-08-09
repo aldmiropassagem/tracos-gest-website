@@ -24,9 +24,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+ 
   return (
     <html lang="pt-PT">
       <body
+      
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-gray-800 `}
       >
          <Nav />

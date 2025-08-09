@@ -79,7 +79,7 @@ export const Services = () => {
       <section id="servicos" className="w-full flex flex-col items-center justify-center relative pt-20 pb-10 px-6 sm:px-6 lg:px-10 xl:px-20  border-b-2 border-[#026865]">
          
          <div className="flex flex-col justify-center items-center max-w-screen-xl mx-auto">
-            <FadeInOnScrollProps direction='up'>
+            <FadeInOnScrollProps direction='up' delay={12}>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 text-[#026865]">
                Nossos Serviços
             </h2>

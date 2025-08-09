@@ -7,7 +7,7 @@ import { FadeInOnScrollProps } from '../FadeInScroll';
 export const Eventos = () => {
   return (
     <section id="eventos" className="flex flex-col items-center justify-center w-full pt-20 pb-14 px-4 sm:px-6 lg:px-10 xl:px-20 mt-10">
-      <FadeInOnScrollProps direction='left'> 
+      <FadeInOnScrollProps direction='up'> 
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 text-[#026865]">
         Eventos
       </h2>

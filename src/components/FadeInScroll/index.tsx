@@ -34,8 +34,8 @@ export const FadeInOnScrollProps: React.FC<FadeInOnScrollProps>=({
         return()=> observer.disconnect();
     },[])
 
-    const baseClasses = 'transform transition-all duration-700 ease-out opacity-0';
-    const visiBleClasses = 'opacity-100 translate-x-0 translate-y-0';
+    const baseClasses = 'transition-all duration-700 ease-in opacity-0';
+    const visiBleClasses = 'opacity-100 translate-x-20 translate-y-0';
 
     const directionClasses = {
         up:'translate-y-[32]',
