@@ -6,6 +6,7 @@ import { Eventos } from '../components/events';
 //import {Statistics} from '../components/statistics';
 
 const Home: NextPage = () => {
+  
   return (
     <>
 
