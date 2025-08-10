@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { BoxIcon } from '../../components/icons/BoxIcon';
 import { FeatureIcon } from '../../components/icons/FeatureIcon';
-import Link from 'next/link';
 import { FadeInOnScrollProps } from '@/components/FadeInScroll';
 
 
