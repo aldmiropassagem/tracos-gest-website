@@ -104,7 +104,7 @@ export const Services = () => {
             <h2
             ref={ref} 
             className={`text-3xl sm:text-4xl font-bold text-center mb-6 text-[#026865] transition-opacity duration-700 ${
-        inView ? 'animate__animated animate__fadeInDownBig opacity-100': 'opacity-0'  }`}>
+        inView ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0'  }`}>
                Nossos Serviços
             </h2>
 

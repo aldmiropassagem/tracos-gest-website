@@ -1,12 +1,16 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+
+import "animate.css"
+import { useInView } from "react-intersection-observer";
+
 import { BoxIcon } from '../../components/icons/BoxIcon';
 import { FeatureIcon } from '../../components/icons/FeatureIcon';
-import { FadeInOnScrollProps } from '@/components/FadeInScroll';
+import { ChartSpline, Crosshair, Eye, ScanEye, SquareCheckBig } from "lucide-react";
 
 
 
-const slides = [
+
+const header = [
      {
          title1: "Sobre - Traços Gest",
          title2: "Consultoria de gestão e negócios",
@@ -15,52 +19,40 @@ const slides = [
      
      },
   
-     {
-         title1: "Empresa de consultoria de gestão e negócios",
-         title2: "Com um olhar no futuro",
-        description:'criando um legado de sucesso e crescimento para todos os nossos parceiros.',
-         image: 'assets/banner-2.jpg',
-     }
 ]
 
 
 
 export default function About() {
-   const [activeIndex, setActiveIndex] = useState(0);
-  
-     // Auto slide a cada 5 segundos
-     useEffect(() => {
-        const interval = setInterval(() => {
-           setActiveIndex((prevIndex) => (prevIndex + 1) % slides.length);
-        }, 5000);
-        return () => clearInterval(interval);
-     }, []);
-  
-     const goToSlide = (index: number) => {
-        setActiveIndex(index);
-     };
+
+   const {ref, inView} = useInView({
+       triggerOnce: true,
+       threshold:0.2
+       
+     })
+
+     const { ref: ref1, inView: inView1 } = useInView({ triggerOnce: true, threshold: 0.2 });
+const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold: 0.2 });
+
   return (
     <>
-      <section>
-         <div className="w-full pt-20 relative overflow-hidden bg-white bg-no-repeat bg-fixed bg-cover bg-center transition-all duration-1000 ease-in-outs" style={{
-         backgroundImage: `url(${slides[activeIndex].image})`
+      <section >
+         <div  className="w-full h-[300px] md:h-[600px]   pt-20 relative overflow-hidden bg-no-repeat bg-fixed bg-cover bg-top" style={{
+         backgroundImage: `url(${header[0].image})`
       }}>
 
          <div className="w-full h-fit relative">
-            <div className="flex transition-transform duration-700 ease-in-out"
-               style={{
-                  transform: `translateX(-${activeIndex * 100}%)`,
-                  //backgroundImage: `url(${slides[activeIndex].image})`
-               }}
+            <div className="flex transition-transform "
+               
             >
-               {slides.map((slide, index) => (
+               {header.map((header, index) => (
                   <div key={index} className="w-full min-w-full flex flex-col lg:flex-row gap-8 px-20">
-                     <div className={`flex flex-col gap-5 max-w-xl ${activeIndex ? 'text-white' : 'text-black'}`}>
-                        <h1 className="text-4xl md:text-5xl font-bold text-center md:text-start">
-                           {slide.title1}
-                           <span className="text-[#026865]">{slide.title2}</span>
+                     <div className={`flex flex-col gap-5 max-w-xl `}>
+                        <h1 className="text-4xl md:text-5xl font-bold text-center md:text-start text-black">
+                           {header.title1}
+                           <span className="text-[#026865] ">{header.title2}</span>
                         </h1>
-                        <p className={`text-lg text-center md:text-start ${activeIndex ? 'text-white' : 'text-black'}`}>{slide.description}</p>
+                        <p className={`text-lg text-center md:text-start text-white`}>{header.description}</p>
                         <div className="flex gap-2 justify-center items-center md:justify-start md:items-start">
                            
                         </div>
@@ -69,59 +61,57 @@ export default function About() {
                ))}
             </div>
 
-            {/* Indicadores */}
-            <div className="gap-2 flex justify-center mt-28">
-               {slides.map((_, index) => (
-                  <button
-                     key={index}
-                     className={`w-4 h-4 rounded-full cursor-pointer ${index === activeIndex ? 'bg-[#07EA37]' : 'bg-white'} transition-all duration-700`}
-                     onClick={() => goToSlide(index)}
-                  />
-                  
-               ))}
-            </div>
-           
-            
-            <hr className="mt-10 text-gray-500" />
-
          </div>
-
 
       </div>
       </section>
 
-      <section className="w-full flex flex-col-reverse md:flex-row gap-10 pt-20 px-6 md:px-10 xl:px-20 items-center">
-        <div className="w-full flex flex-col text-justify">
-          <FadeInOnScrollProps direction='up'>
-          <h3 className="text-2xl text-[#026865] font-semibold mb-2 mt-4">Quem Somos?</h3>
+      <section 
+      className="w-full flex flex-col-reverse md:flex-row gap-10 pt-20 px-6 md:px-10 xl:px-20 items-center">
+        <div  
+        className="w-full flex flex-col text-justify">
+          <h3  
+           ref={ref}
+          className={`text-2xl text-[#026865] font-semibold mb-2 mt-4 ${
+        inView ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0' }`}>Quem Somos?</h3>
           
           
-          <span>
+          <span
+          className={`${
+        inView ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0' }`}
+          >
             A Traços Gest é uma empresa de consultoria de gestão e negócios, especializada em apoiar as organizações a
             alcançarem seu potencial através de soluções personalizadas e estratégicas. Com uma equipa de consultores
             experientes, nosso foco consiste em transformar desafios em oportunidades, promovendo o crescimento
             sustentável e a excelência operacional de nossos clientes.
           </span>
           
-          <span className="mt-4">
+          <span 
+          className={`mt-4 ${
+        inView ? 'animate__animated animate__fadeInDownBig animate__delay-1s opacity-100': 'opacity-0' }`}>
             A nossa abordagem é focada na inovação, análise detalhada e uma execução pragmática, adaptando-nos às
             necessidades de cada cliente e ao contexto específico em que operam.
           </span>
-           </FadeInOnScrollProps>
+         
         </div>
        
-        <div className="w-full flex justify-center items-center">
+        <div className={`w-full flex justify-center items-center ${
+        inView ? 'animate__animated animate__fadeInDown animate__delay-2s opacity-100': 'opacity-0' }`}>
           <FeatureIcon />
          
         </div>
         
       </section>
 
-      <section className="flex flex-col xl:flex-row justify-between items-start px-6 md:px-10 xl:px-20 gap-8 text-justify">
-        <FadeInOnScrollProps direction='left'>
-        <div className="py-10 max-w-full xl:max-w-[400px]">
-          <div className="flex gap-2 items-center mb-2">
-            <BoxIcon />
+      <section 
+      className="flex flex-col xl:flex-row justify-between items-start px-6 md:px-10 xl:px-20 gap-8 text-justify">
+        
+        <div  
+        
+        className={`py-10 max-w-full xl:max-w-[400px] ${
+        inView ? 'animate__animated animate__fadeInDown animate__delay-3s opacity-100': 'opacity-0' }`}>
+          <div className="flex gap-2 items-center mb-2  text-[#026865]">
+            <ChartSpline />
 
 
             <p className="text-xl text-[#026865] font-semibold">Missão</p>
@@ -132,12 +122,15 @@ export default function About() {
             atendam às reais necessidades do mercado.
           </span>
         </div>
-</FadeInOnScrollProps>
 
-        <div className="py-10 max-w-full xl:max-w-[400px]">
-          <FadeInOnScrollProps direction='left'>
-          <div className="flex gap-2 items-center mb-2">
-            <BoxIcon />
+
+        <div 
+       
+        className={`py-10 max-w-full xl:max-w-[400px] ${
+        inView ? 'animate__animated animate__fadeInDown animate__delay-3s opacity-100': 'opacity-0' }`}>
+          
+          <div className="flex gap-2 items-center mb-2  text-[#026865]">
+            <Eye />
             <p className="text-xl text-[#026865] font-semibold">Visão</p>
           </div>
           <span>
@@ -146,13 +139,15 @@ export default function About() {
             organização tem o potencial para alcançar novos horizontes, e estamos comprometidos em ser parceiros
             estratégicos para o sucesso a longo prazo.
           </span>
-          </FadeInOnScrollProps>
+         
         </div>
 
-        <div className="py-10 max-w-full xl:max-w-[400px]">
-          <FadeInOnScrollProps direction='left'>
-          <div className="flex gap-2 items-center mb-2">
-            <BoxIcon />
+        <div  
+        className={`py-10 max-w-full xl:max-w-[400px] ${
+        inView ? 'animate__animated animate__fadeInDown animate__delay-3s opacity-100': 'opacity-0' }`}>
+          
+          <div className="flex gap-2 items-center mb-2  text-[#026865]">
+            <SquareCheckBig />
             <p className="text-xl text-[#026865] font-semibold">Valores</p>
           </div>
           <span>
@@ -183,19 +178,22 @@ export default function About() {
               </span>
             </li>
           </ul>
-          </FadeInOnScrollProps>
+         
         </div>
       </section>
 
       <section className="flex flex-col xl:flex-row justify-center px-6 md:px-10 xl:px-20 gap-10 border-t-2 border-[#026865] text-justify">
-        <div className="py-10 max-w-full xl:max-w-[500px]">
-
-          <FadeInOnScrollProps direction='left'>
-          <div className="flex gap-2 items-center mb-2">
-            <BoxIcon />
+        <div 
+        ref={ref1}
+        className="py-10 max-w-full xl:max-w-[500px]">
+       
+          <div className={`flex gap-2 items-center mb-2  text-[#026865] ${
+        inView1 ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0' }`}>
+            <Crosshair />
             <p className="text-xl text-[#026865] font-semibold">Objectivos</p>
           </div>
-          <ol className="mt-2 pl-6 list-decimal">
+          <ol className={`mt-2 pl-6 list-decimal ${
+        inView1 ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0' }`}>
             <li>
               Proporcionar soluções personalizadas que atendam às necessidades únicas de cada cliente, maximizando sua
               competitividade no mercado;
@@ -216,13 +214,16 @@ export default function About() {
               Estabelecer parcerias de longo prazo, tornando-nos um pilar no desenvolvimento contínuo dos nossos clientes.
             </li>
           </ol>
-          </FadeInOnScrollProps>
+         
         </div>
 
-        <div className="py-10 max-w-full xl:max-w-[500px]">
-          <FadeInOnScrollProps direction='left'>
-          <div className="flex gap-2 items-center mb-2">
-            <BoxIcon />
+        <div 
+        ref={ref2}
+        className={`py-10 max-w-full xl:max-w-[500px] ${
+        inView2 ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0' }`}>
+         
+          <div className="flex gap-2 items-center mb-2  text-[#026865]">
+            <ScanEye />
             <p className="text-xl text-[#026865] font-semibold">Ambição</p>
           </div>
           <p className="mb-4">
@@ -235,7 +236,7 @@ export default function About() {
             Com um olhar no futuro, queremos ser uma empresa reconhecida pela sua capacidade de gerar transformação real e
             sustentável, criando um legado de sucesso e crescimento para todos os nossos parceiros.
           </p>
-          </FadeInOnScrollProps>
+          
         </div>
       </section>
     </>
