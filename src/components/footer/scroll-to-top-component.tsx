@@ -1,5 +1,5 @@
 'use client';
-import 'animate.css'
+
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 

@@ -2,8 +2,6 @@
 
 import "animate.css"
 import { useInView } from "react-intersection-observer";
-
-import { BoxIcon } from '../../components/icons/BoxIcon';
 import { FeatureIcon } from '../../components/icons/FeatureIcon';
 import { ChartSpline, Crosshair, Eye, ScanEye, SquareCheckBig } from "lucide-react";
 
