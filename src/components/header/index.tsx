@@ -68,7 +68,7 @@ export const Header = () => {
                {slides.map((_, index) => (
                   <button
                      key={index}
-                     className={`w-4 h-4 rounded-full cursor-pointer ${index === activeIndex ? 'bg-[#07EA37]' : 'bg-white'} transition-all duration-700`}
+                     className={`w-4 h-4 rounded-full cursor-pointer ${index === activeIndex ? 'bg-[#026865]' : 'bg-white'} transition-all duration-700`}
                      onClick={() => goToSlide(index)}
                   />
                   
