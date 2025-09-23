@@ -29,7 +29,7 @@ const GlowCard = ({ card, index, children }:GlowCard) => {
     angle = (angle + 360) % 360;
 
     // set the angle as a CSS variable
-    card.style.setProperty("--start", angle + 60);
+    card.style.setProperty("--start", `${angle + 60}`);
   };
 
   // return the card component with the mouse move event

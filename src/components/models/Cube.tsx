@@ -24,7 +24,7 @@ function RubiksCube() {
 
     // paleta de cinzas (mantendo dark minimal)
  const colors = [
-  new THREE.Color("#8c8c8c"),
+  new THREE.Color("#111"),
   new THREE.Color("#2e2e2e"),
   new THREE.Color("#2e2e2e"),
   new THREE.Color("#4d4d4d"),
