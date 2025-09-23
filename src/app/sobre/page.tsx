@@ -1,12 +1,7 @@
 'use client'
 
-import "animate.css"
-import { useInView } from "react-intersection-observer";
 import { FeatureIcon } from '../../components/icons/FeatureIcon';
 import { ChartSpline, Crosshair, Eye, ScanEye, SquareCheckBig } from "lucide-react";
-
-
-
 
 const header = [
      {
@@ -19,18 +14,7 @@ const header = [
   
 ]
 
-
-
 export default function About() {
-
-   const {ref, inView} = useInView({
-       triggerOnce: true,
-       threshold:0.2
-       
-     })
-
-     const { ref: ref1, inView: inView1 } = useInView({ triggerOnce: true, threshold: 0.2 });
-const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
     <>
@@ -69,14 +53,10 @@ const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold:
         <div  
         className="w-full flex flex-col text-justify">
           <h3  
-           ref={ref}
-          className={`text-2xl text-[#026865] font-semibold mb-2 mt-4 ${
-        inView ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0' }`}>Quem Somos?</h3>
+          className={`text-2xl text-[#026865] font-semibold mb-2 mt-4 `}>Quem Somos?</h3>
           
           
           <span
-          className={`${
-        inView ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0' }`}
           >
             A Traços Gest é uma empresa de consultoria de gestão e negócios, especializada em apoiar as organizações a
             alcançarem seu potencial através de soluções personalizadas e estratégicas. Com uma equipa de consultores
@@ -85,16 +65,14 @@ const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold:
           </span>
           
           <span 
-          className={`mt-4 ${
-        inView ? 'animate__animated animate__fadeInDownBig animate__delay-1s opacity-100': 'opacity-0' }`}>
+          className={`mt-4 `}>
             A nossa abordagem é focada na inovação, análise detalhada e uma execução pragmática, adaptando-nos às
             necessidades de cada cliente e ao contexto específico em que operam.
           </span>
          
         </div>
        
-        <div className={`w-full flex justify-center items-center ${
-        inView ? 'animate__animated animate__fadeInDown animate__delay-2s opacity-100': 'opacity-0' }`}>
+        <div className={`w-full flex justify-center items-center `}>
           <FeatureIcon />
          
         </div>
@@ -106,8 +84,7 @@ const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold:
         
         <div  
         
-        className={`py-10 max-w-full xl:max-w-[400px] ${
-        inView ? 'animate__animated animate__fadeInDown animate__delay-3s opacity-100': 'opacity-0' }`}>
+        className={`py-10 max-w-full xl:max-w-[400px] `}>
           <div className="flex gap-2 items-center mb-2  text-[#026865]">
             <ChartSpline />
 
@@ -124,8 +101,7 @@ const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold:
 
         <div 
        
-        className={`py-10 max-w-full xl:max-w-[400px] ${
-        inView ? 'animate__animated animate__fadeInDown animate__delay-3s opacity-100': 'opacity-0' }`}>
+        className={`py-10 max-w-full xl:max-w-[400px] `}>
           
           <div className="flex gap-2 items-center mb-2  text-[#026865]">
             <Eye />
@@ -141,8 +117,7 @@ const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold:
         </div>
 
         <div  
-        className={`py-10 max-w-full xl:max-w-[400px] ${
-        inView ? 'animate__animated animate__fadeInDown animate__delay-3s opacity-100': 'opacity-0' }`}>
+        className={`py-10 max-w-full xl:max-w-[400px] `}>
           
           <div className="flex gap-2 items-center mb-2  text-[#026865]">
             <SquareCheckBig />
@@ -182,16 +157,14 @@ const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold:
 
       <section className="flex flex-col xl:flex-row justify-center px-6 md:px-10 xl:px-20 gap-10 border-t-2 border-[#026865] text-justify">
         <div 
-        ref={ref1}
+        
         className="py-10 max-w-full xl:max-w-[500px]">
        
-          <div className={`flex gap-2 items-center mb-2  text-[#026865] ${
-        inView1 ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0' }`}>
+          <div className={`flex gap-2 items-center mb-2  text-[#026865] `}>
             <Crosshair />
             <p className="text-xl text-[#026865] font-semibold">Objectivos</p>
           </div>
-          <ol className={`mt-2 pl-6 list-decimal ${
-        inView1 ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0' }`}>
+          <ol className={`mt-2 pl-6 list-decimal `}>
             <li>
               Proporcionar soluções personalizadas que atendam às necessidades únicas de cada cliente, maximizando sua
               competitividade no mercado;
@@ -216,9 +189,8 @@ const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold:
         </div>
 
         <div 
-        ref={ref2}
-        className={`py-10 max-w-full xl:max-w-[500px] ${
-        inView2 ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0' }`}>
+        
+        className={`py-10 max-w-full xl:max-w-[500px] `}>
          
           <div className="flex gap-2 items-center mb-2  text-[#026865]">
             <ScanEye />

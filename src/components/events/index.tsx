@@ -1,67 +1,98 @@
 'use client'
-import "animate.css"
-import { useInView } from "react-intersection-observer";
-
 import React from 'react';
 import Image from 'next/image';
+import TitleHeader from '../TitleHeader';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { event } from '@/constante';
+
+gsap.registerPlugin(ScrollTrigger)
 
 
 export const Eventos = () => {
+  useGSAP(()=>{
+    // Animation using gsap
+  gsap.fromTo(
+    ".event-img",
+    {x: -100,
+      opacity:0,
+    },
+    {
+      x: 0,
+      opacity:1,
+      duration:1.2,
+      ease:"power2.inOut",
+      scrollTrigger:{
+        trigger:".event-img",
+        start:"top 80%",
+        toggleActions:"play none none reverse"
+      }
+    }
+  );
 
-   const {ref, inView} = useInView({
-    triggerOnce: true,
-    threshold:0.2
+  // Animation Title and p
+  gsap.fromTo(
+    ".event-text h2, .event-text p",
+    {
+      y:40,
+      opacity:0,
+    },
+    {
+      y:0,
+      opacity:1,
+      duration:1,
+      stagger:0.3,
+      ease:"power2.out",
+      delay:0.2,
+      scrollTrigger:{
+        trigger:".event-text",
+        start: "top 85%",
+        toggleActions:"play none none reverse"
+      }
+    }
+  );
   })
   return (
-    <section id="eventos" className="flex flex-col items-center justify-center w-full pt-20 pb-14 px-4 sm:px-6 lg:px-10 xl:px-20 mt-10">
-    
-      <h2 
-      ref={ref}
-      className={`text-3xl sm:text-4xl font-bold text-center mb-6 text-[#026865] transition-opacity duration-700 ${
-        inView ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0'  }`}>
-        Eventos
-      </h2>
+    <section id="events" className="flex flex-col  items-center  justify-center w-full pt-40 pb-14 px-4 sm:px-6 lg:px-10 xl:px-20 hero-layout mt-64  bg-black-200">
+  <TitleHeader
+  title='Eventos'
+  />
       
-      <div className="w-full max-w-screen-xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mt-10">
+      <div className="w-full max-w-screen-xl mx-auto ">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mt-10 ">
           
           <div 
-          
-          className={`flex items-center justify-center w-full max-w-md h-auto ${
-        inView ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0'  }`}>
+          className='img flex items-center justify-center w-full max-w-md h-auto'>
             
             <Image
               src="/assets/fipe.png"
               alt="FIPE"
               width={600}
               height={150}
-              className="w-full h-auto object-contain"
+              className="event-img w-full h-auto object-contain"
               loading="lazy"
               quality={100}
             />
            
           </div>
 
-          <div className="w-full max-w-2xl text-justify">
+          <div className="event-text w-full   max-w-2xl text-justify">
             
-            <h5 
-            ref={ref} 
-            className={`text-[#026865] font-semibold text-lg mb-2
-             transition-opacity duration-700 ${
-        inView ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0'  }`}>Sobre a FIPE</h5>
-            <p
-            ref={ref} 
-            className={`text-gray-800 text-sm sm:text-base leading-relaxed transition-opacity duration-700 ${
-        inView ? 'animate__animated animate__fadeInDown animate__delay-1s opacity-100': 'opacity-0'  }`}>
-
-              <strong>A FIPE - Feira de Inteligência e Política Económica</strong>, é um evento de referência dedicado à promoção do conhecimento, inovação e diálogo estratégico nas áreas da inteligência económica, análise de dados e formulação de políticas públicas.
-              Realizada anualmente, a FIPE reúne especialistas, decisores políticos, académicos, empresas e instituições, criando uma plataforma dinâmica para a partilha de ideias, experiências e soluções que impulsionam o desenvolvimento sustentável e a competitividade económica. <br /><br />
-             <p className={`${
-        inView ? 'animate__animated animate__fadeInDownBig animate__delay-1s opacity-100': 'opacity-0'  }`}>
-               O principal objetivo da FIPE é fomentar a cooperação entre os sectores público e privado, estimular o pensamento crítico e apresentar ferramentas e práticas inovadoras que orientem decisões estratégicas baseadas em evidências.
-              A feira inclui conferências, workshops, exposições temáticas e sessões de networking, proporcionando um ambiente fértil para a troca de conhecimento e a criação de oportunidades.
-             </p>
-            </p>
+            <h2 className='font-semibold text-lg mb-2 '>Sobre a FIPE</h2>
+            <div
+            className='text-sm sm:text-base leading-relaxed'>
+             {event.map(({desc, strong})=>(
+              <div key={desc} className='event-text'>
+                <p>
+                   <strong>A FIPE - Feira de Inteligência e Política Económica </strong> {strong}
+                </p>
+                <br /> 
+                <p>{desc}</p>
+              </div>
+             ))}
+             
+            </div>
            
           </div>
 
