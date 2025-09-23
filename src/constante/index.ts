@@ -149,3 +149,16 @@ export const event:Events[]=[
     },
     
 ]
+
+export type About ={
+  review:string,
+  desc:string,
+    
+}
+
+export const about:About[]=[
+    {
+        review:"A Traços Gest é uma empresa de consultoria de gestão e negócios, especializada em apoiar as organizações a alcançarem seu potencial através de soluções personalizadas e estratégicas. Com uma equipa de consultores experientes, nosso foco consiste em transformar desafios em oportunidades, promovendo o crescimento sustentável e a excelência operacional de nossos clientes.",
+        desc:"A nossa abordagem é focada na inovação, análise detalhada e uma execução pragmática, adaptando-nos às necessidades de cada cliente e ao contexto específico em que operam."
+    }
+]

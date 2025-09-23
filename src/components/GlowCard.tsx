@@ -2,12 +2,13 @@ import { ServiceCard } from "@/constante";
 import { ReactNode, useRef } from "react";
 
 type GlowCard = {
-    card:ServiceCard,
+    card?:ServiceCard,
     index:number,
-    children?:ReactNode
+    children?:ReactNode,
+    className?:string
 }
 
-const GlowCard = ({ card, index, children }:GlowCard) => {
+const GlowCard = ({ card, index, children , className}:GlowCard) => {
   // refs for all the cards
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -35,16 +36,13 @@ const GlowCard = ({ card, index, children }:GlowCard) => {
   // return the card component with the mouse move event
   return (
     <div
-      ref={(el: HTMLDivElement | null) => {
-  cardRefs.current[index] = el
-}}
-
+      ref={(el) => { cardRefs.current[index] = el }}
       onMouseMove={handleMouseMove(index)}
-      className="card card-border timeline-card rounded-xl p-10 mb-5 break-inside-avoid-column"
+      className={`card card-border timeline-card rounded-xl p-10 mb-5 break-inside-avoid-column ${className ?? ""}`}
     >
       <div className="glow"></div>
       <div className="mb-5">
-        <p className ="text-white-50">{card.desc}</p>
+        <p className ="text-white-50">{card?.desc}</p>
       </div>
       {children}
     </div>
