@@ -5,7 +5,8 @@ type GlowCard = {
     card?:ServiceCard,
     index:number,
     children?:ReactNode,
-    className?:string
+    className?:string,
+    
 }
 
 const GlowCard = ({ card, index, children , className}:GlowCard) => {
@@ -42,7 +43,7 @@ const GlowCard = ({ card, index, children , className}:GlowCard) => {
     >
       <div className="glow"></div>
       <div className="mb-5">
-        <p className ="text-white-50">{card?.desc}</p>
+        <p className ="text-white-50">{card?.review}</p>
       </div>
       {children}
     </div>

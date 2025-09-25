@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
 
+
 :root {
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
 }
@@ -473,22 +474,19 @@ section {
   opacity: 1;
 }
 
-.clip-corner {
-  clip-path: polygon(
-    /* Topo */
-    0 0,        /* canto superior esquerdo */
-    10% 12%,    /* recorte lado esquerdo superior */
-    90% 12%,    /* recorte lado direito superior */
-    100% 0,     /* canto superior direito */
 
-    /* Base */
-    100% 100%,  /* canto inferior direito */
-    90% 88%,    /* recorte lado direito inferior */
-    10% 88%,    /* recorte lado esquerdo inferior */
-    0 100%      /* canto inferior esquerdo */
-  );
+@keyframes spin-slow {
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
 }
 
+.spin-slow{
+  animation: spin-slow 9s linear infinite;
+}
 
 
 

@@ -30,7 +30,7 @@ export const words: Words[]=[
 
 export type ServiceCard = {
     title:string,
-    desc:string,
+    review:string,
     li:string[],
     logo:string,
     
@@ -39,7 +39,7 @@ export type ServiceCard = {
 export const serviceCards: ServiceCard[]=[
     {
         title: "Consultoria Estratégica",
-        desc:"Ajudamos empresas a definir e implementar estratégias de longo prazo que garantem um crescimento sustentável e a criação de valor.",
+        review:"Ajudamos empresas a definir e implementar estratégias de longo prazo que garantem um crescimento sustentável e a criação de valor.",
         li:[
             "Planeamento estratégico e análise de mercado.",
             "Definição de visão e objectivos corporativos.",
@@ -54,7 +54,7 @@ export const serviceCards: ServiceCard[]=[
 
     {
         title:"Gestão de Processos e Eficiência Operacional",
-        desc:"Através da otimização de processos, identificamos oportunidades para melhorar a eficiência e reduzir custos.",
+        review:"Através da otimização de processos, identificamos oportunidades para melhorar a eficiência e reduzir custos.",
         li:[
             "Reengenharia de processos empresariais;",
             "Automação e digitalização de processos",
@@ -68,7 +68,7 @@ export const serviceCards: ServiceCard[]=[
 
      {
         title:"Transformação digital e inovação tecnológica",
-        desc:"Ajudamos as empresas a se adaptarem à era digital, implementando tecnologias inovadoras para aprimorar a gestão e os resultados:",
+        review:"Ajudamos as empresas a se adaptarem à era digital, implementando tecnologias inovadoras para aprimorar a gestão e os resultados:",
         li:[
             "Implementação de sistemas de gestão ERP;",
             "Análise e gestão de dados empresariais (Business Intelligence);",
@@ -81,7 +81,7 @@ export const serviceCards: ServiceCard[]=[
 
      {
         title:"Gestão de Mudanças",
-        desc:"Apoiamos as empresas na gestão de mudanças organizacionais, garantindo que processos de reestruturação, fusões ou aquisições ocorram de maneira eficiente e sem impactos negativos:",
+       review:"Apoiamos as empresas na gestão de mudanças organizacionais, garantindo que processos de reestruturação, fusões ou aquisições ocorram de maneira eficiente e sem impactos negativos:",
         li:[
             "Planeamento e execução de mudanças organizacionais;",
             "Gestão de crises e turnaround empresarial;",
@@ -95,7 +95,7 @@ export const serviceCards: ServiceCard[]=[
 
      {
         title:"Consultoria Financeira",
-        desc:"Oferecemos suporte completo na gestão financeira, para garantir a saúde financeira e o crescimento sustentável dos negócios.",
+        review:"Oferecemos suporte completo na gestão financeira, para garantir a saúde financeira e o crescimento sustentável dos negócios.",
         li:[
             "Planeamento e gestão financeira estratégica;",
             "Análise de viabilidade de projetos e investimentos; ",
@@ -109,7 +109,7 @@ export const serviceCards: ServiceCard[]=[
 
      {
         title:"Desenvolvimento de Pessoas e Liderança",
-        desc:"Investimos no capital humano das empresas, desenvolvendo programas personalizados de capacitação e liderança, para maximizar o desempenho das equipes e líderes.",
+        review:"Investimos no capital humano das empresas, desenvolvendo programas personalizados de capacitação e liderança, para maximizar o desempenho das equipes e líderes.",
         li:[
             " Programas de formação e desenvolvimento de competências;",
             "Coaching e mentoring para líderes;",
@@ -123,7 +123,7 @@ export const serviceCards: ServiceCard[]=[
 
      {
         title:"Sustentabilidade e Responsabilidade Social Corporativa",
-        desc:"Ajudamos as empresas a implementar práticas sustentáveis e a integrar a responsabilidade social corporativa em sua estratégia de negócios.",
+        review:"Ajudamos as empresas a implementar práticas sustentáveis e a integrar a responsabilidade social corporativa em sua estratégia de negócios.",
 
         li:[
             "Consultoria em sustentabilidade e ESG (Environmental, Social,Governance);",
@@ -161,4 +161,58 @@ export const about:About[]=[
         review:"A Traços Gest é uma empresa de consultoria de gestão e negócios, especializada em apoiar as organizações a alcançarem seu potencial através de soluções personalizadas e estratégicas. Com uma equipa de consultores experientes, nosso foco consiste em transformar desafios em oportunidades, promovendo o crescimento sustentável e a excelência operacional de nossos clientes.",
         desc:"A nossa abordagem é focada na inovação, análise detalhada e uma execução pragmática, adaptando-nos às necessidades de cada cliente e ao contexto específico em que operam."
     }
+]
+
+export type Pilar = {
+        title:string,
+        text?:string,
+        li?:string[],
+        review:string,
+     }
+
+export const pilares:Pilar[]=[
+    {
+    title:"Missão",
+    text:"Nossa missão consiste em fornecer uma consultoria de excelência que impulsione o sucesso dos nossos clientes, através da aplicabilidade de metodologias eficazes, estratégias inovadoras e soluções personalizadas que atendam às reais necessidades do mercado.",
+    review:""
+},
+
+{
+    title:"Visão",
+    text:"Ser reconhecida como uma referência no mercado de consultoria de gestão e negócios, contribuindo de forma significativa para o crescimento e inovação das empresas com as quais trabalhamos. Acreditamos que cada organização tem o potencial para alcançar novos horizontes, e estamos comprometidos em ser parceiros estratégicos para o sucesso a longo prazo.",
+    review:""
+},
+
+{
+    title:"Valores",
+     li:[
+        "Compromisso com a excelência: Buscamos sempre os mais altos padrões de qualidade em todos os projectos.",
+        "Inovação contínua: Acreditamos que a adaptação constante e a implementação de soluções inovadoras são essenciais para o sucesso.",
+        "Integridade: Agimos com transparência e ética, construindo relações de confiança com nossos parceiros.",
+        "Sustentabilidade: Priorizamos soluções que promovam um crescimento responsável e sustentável, tanto para as empresas como para a sociedade."
+    ],
+    text:"Pautamo-nos por um conjunto de valores que guiam a nossa forma de trabalhar e de nos relacionarmos com os nossos clientes e colaboradores:",
+    review:""
+   
+
+},
+
+{
+    title:"Objectivos",
+    li:[
+        "Proporcionar soluções personalizadas que atendam às necessidades únicas de cada cliente, maximizando sua competitividade no mercado;",
+        "Apoiar a transformação digital das empresas, capacitando-as a utilizar a tecnologia de forma estratégica para melhorar seus processos e resultados.",
+        "Aumentar a eficiência operacional dos nossos clientes, identificando oportunidades de otimização de processos e redução de custos.",
+        "Expandir o nosso portfólio de serviços, oferecendo consultoria em novas áreas estratégicas que atendam às tendências do mercado.",
+        "Estabelecer parcerias de longo prazo, tornando-nos um pilar no desenvolvimento contínuo dos nossos clientes.",
+       
+    ],
+     review:"",
+},
+
+{
+    title:"Ambição",
+    text:"A Traços Gest almeja consolidar-se como líder no mercado de consultoria de gestão e negócios, sendo a escolha preferida das empresas que buscam soluções inovadoras e de alto impacto. A nossa ambição é expandir para novos mercados, oferecendo nossa expertise a uma gama mais ampla de indústrias e adaptando-nos constantemente às mudanças do mercado para continuar a fornecer soluções relevantes e eficazes. Com um olhar no futuro, queremos ser uma empresa reconhecida pela sua capacidade de gerar transformação real e sustentável, criando um legado de sucesso e crescimento para todos os nossos parceiros.",
+    review:""
+}
 ]
