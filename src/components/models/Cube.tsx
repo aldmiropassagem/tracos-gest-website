@@ -19,49 +19,49 @@ function RubiksCube() {
   const [isInicialized, setIsInicialized] = useState(false)
 
   useEffect(() => {
-    if (!isInicialized){
-        const cubes: THREE.Mesh[] = []
+    if (!isInicialized) {
+      const cubes: THREE.Mesh[] = []
 
-    // paleta de cinzas (mantendo dark minimal)
- const colors = [
-  new THREE.Color("#111"),
-  new THREE.Color("#2e2e2e"),
-  new THREE.Color("#2e2e2e"),
-  new THREE.Color("#4d4d4d"),
-  new THREE.Color("#6e6e6e"),
-  new THREE.Color("#8c8c8c"),
-]
+      // paleta de cinzas (mantendo dark minimal)
+      const colors = [
+        new THREE.Color("#111"),
+        new THREE.Color("#2e2e2e"),
+        new THREE.Color("#2e2e2e"),
+        new THREE.Color("#4d4d4d"),
+        new THREE.Color("#6e6e6e"),
+        new THREE.Color("#8c8c8c"),
+      ]
 
- for (let x = -1; x <= 1; x++) {
-      for (let y = -1; y <= 1; y++) {
-        for (let z = -1; z <= 1; z++) {
-          const geometry = new RoundedBoxGeometry(0.95, 0.95, 0.95, 3, 0.05)
-          geometry.translate(x, y, z)
+      for (let x = -1; x <= 1; x++) {
+        for (let y = -1; y <= 1; y++) {
+          for (let z = -1; z <= 1; z++) {
+            const geometry = new RoundedBoxGeometry(0.95, 0.95, 0.95, 3, 0.05)
+            geometry.translate(x, y, z)
 
-          // brilho metálico
-          const color = colors[Math.floor(Math.random() * colors.length)]
-          const material = new THREE.MeshStandardMaterial({
-            color,
-            roughness: 0.5,
-            metalness: 1,
-          })
+            // brilho metálico
+            const color = colors[Math.floor(Math.random() * colors.length)]
+            const material = new THREE.MeshStandardMaterial({
+              color,
+              roughness: 0.5,
+              metalness: 1,
+            })
 
-          const cube = new THREE.Mesh(geometry, material) as THREE.Mesh & {
-            center?: THREE.Vector3
+            const cube = new THREE.Mesh(geometry, material) as THREE.Mesh & {
+              center?: THREE.Vector3
+            }
+            cube.center = new THREE.Vector3(x, y, z)
+
+            cubes.push(cube)
           }
-          cube.center = new THREE.Vector3(x, y, z)
-
-          cubes.push(cube)
         }
       }
+      cubesRef.current = cubes
+      setIsInicialized(true)
+      startSequence()
+
     }
-    cubesRef.current = cubes
-    setIsInicialized(true)
-    startSequence()
-      
-    }
-  
-    
+
+
   }, [isInicialized])
 
   function rotateLayer(
@@ -124,7 +124,7 @@ function RubiksCube() {
   }
 
   // rotação suave do grupo inteiro
-  useFrame((state, delta) => {
+  useFrame((state, delta: number) => {
     if (groupRef.current) {
       groupRef.current.rotation.y += delta * 0.3
       groupRef.current.rotation.x += delta * 0.1
@@ -137,35 +137,35 @@ function RubiksCube() {
   return (
     <group ref={groupRef}>
       <ambientLight intensity={2}
-      
-       />
-      <directionalLight 
-      ref={lightRef} 
-      intensity={2} 
-      scale={5}
-      position={[-5, 5, -10]} 
-      castShadow
-       />
-      <spotLight 
-      position={[5, -10, -5]} 
-      angle={1} 
-      penumbra={0.8} 
-      intensity={2} 
-      castShadow />
 
-      <hemisphereLight 
-      groundColor={"#ffffff"} 
-      intensity={1} 
-      args={["#ffffff", "#22222", 1]}
-      
       />
-      <pointLight 
-      position={[5, -5, -3]} 
-      intensity={2} 
+      <directionalLight
+        ref={lightRef}
+        intensity={2}
+        scale={5}
+        position={[-5, 5, -10]}
+        castShadow
+      />
+      <spotLight
+        position={[5, -10, -5]}
+        angle={1}
+        penumbra={0.8}
+        intensity={2}
+        castShadow />
+
+      <hemisphereLight
+        groundColor={"#ffffff"}
+        intensity={1}
+        args={["#ffffff", "#22222", 1]}
+
+      />
+      <pointLight
+        position={[5, -5, -3]}
+        intensity={2}
       />
 
-      {isInicialized && cubesRef.current.map((cube, i)=>(
-        <primitive object={cube} key={i}/>
+      {isInicialized && cubesRef.current.map((cube, i) => (
+        <primitive object={cube} key={i} />
       ))}
     </group>
   )
@@ -173,22 +173,22 @@ function RubiksCube() {
 
 export default function Cube() {
   return (
-    <Canvas 
-    dpr={[1,2]}
-    gl={{preserveDrawingBuffer:true}}
-    shadows 
-    camera={{ position: [5, 5, 6], fov: 35 }}>
+    <Canvas
+      dpr={[1, 2]}
+      gl={{ preserveDrawingBuffer: true }}
+      shadows
+      camera={{ position: [5, 5, 6], fov: 35 }}>
 
-        <Suspense >
+      <Suspense >
         <RubiksCube />
-     <OrbitControls 
-   enableZoom={false}
- 
-  />
-        </Suspense>
+        <OrbitControls
+          enableZoom={false}
+
+        />
+      </Suspense>
       <color attach="background" args={["black"]} />
-      
-     
+
+
     </Canvas>
   )
 }

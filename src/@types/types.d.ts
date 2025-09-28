@@ -1,4 +1,4 @@
 declare module "@tweenjs/tween.js" {
-  const TWEEN: any;
+  const TWEEN: string;
   export default TWEEN;
 }
