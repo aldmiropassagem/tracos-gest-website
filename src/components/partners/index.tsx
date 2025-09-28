@@ -11,11 +11,11 @@ export const Partners = () => {
          <div className="flex flex-col justify-center items-center max-w-screen-xl mx-auto w-full">
    
             <h2
-            className={`text-3xl sm:text-4xl font-bold text-center mb-6 text-[#026865] `}>
+            className={`text-3xl sm:text-4xl font-bold text-center mb-6 text-white `}>
                Parceiros
             </h2>
 
-            <p className={`text-base sm:text-lg text-center mb-6 max-w-3xl text-gray-700 `}>
+            <p className={`text-base sm:text-lg text-center mb-6 max-w-3xl text-white-50 `}>
                Conheça os nossos principais Parceiros de Negócios.
             </p>
 
