@@ -4,7 +4,7 @@ import ScrollToTopButton from './scroll-to-top-component';
 
 export const Footer = () => {
    return (
-      <footer id='contacto' className='text-white bg-[#026865] px-4 sm:px-6 lg:px-10 py-10 flex flex-col w-full'>
+      <footer id='contact' className='opacity-85 text-white bg-[#026865] px-4 sm:px-6 lg:px-10 py-10 flex flex-col w-full mt-24'>
 
          <div className='flex flex-col lg:flex-row w-full gap-10 lg:gap-20 mb-16'>
             <div className='flex flex-col space-y-2 max-w-sm'>
@@ -17,11 +17,9 @@ export const Footer = () => {
                <div className='flex flex-col gap-2'>
                   <h5 className='font-bold'>Mapa do Site</h5>
                   <ul className='space-y-1 text-sm sm:text-base'>
-                     <li>Página Inicial</li>
+                     <li>Inicio</li>
                      <li>Serviços</li>
                      <li>Eventos</li>
-                     <li>Blog</li>
-                     <li>Contacto</li>
                   </ul>
                </div>
 

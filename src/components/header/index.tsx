@@ -1,85 +1,86 @@
-'use client'
+"use client"
 
-import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
-
-const slides = [
-   {
-      title1: 'A sua melhor Consultoria em ',
-      title2: 'Gestão.',
-      description: 'A forma mais fácil de impulsionar o seu negócio com soluções modernas e eficientes.',
-      image: 'assets/banner-1.jpg',
-   },
-   {
-      title1: 'Estratégias inteligentes para impulsionar ',
-      title2: 'o crescimento do seu negócio.',
-      description: 'Maximize os seus resultados com nossa consultoria especializada.',
-      image: 'assets/banner-2.webp',
-   },
-
-
-];
+import { words } from '@/constante'
+import React from 'react'
+import Button from '../Button'
+import Cube from '../models/Cube'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 export const Header = () => {
-   const [activeIndex, setActiveIndex] = useState(0);
+   useGSAP(()=>{
+      gsap.fromTo(
+         ".hero-text h1",
+         {y:50, opacity: 0},
+         {y:0, opacity:1, stagger:0.2, duration:1, ease:"power2.inOut"}
+      )
+   })
+  return (
+    <section className='services relative overflow-hidden'>
+      <div className='block absolute top-1/2 left-0 w-[960px] h-[380] translate-x-[-290px] -translate-y-1/2 rotate-90'>
+         <img 
+                    src="/images/bg-outlines.svg"
+                    width={960}
+                    height={380} 
+                    alt="outline"
+                    className="relative z-2"
+                     />
 
-   // Auto slide a cada 5 segundos
-   useEffect(() => {
-      const interval = setInterval(() => {
-         setActiveIndex((prevIndex) => (prevIndex + 1) % slides.length);
-      }, 5000);
-      return () => clearInterval(interval);
-   }, []);
-
-   const goToSlide = (index: number) => {
-      setActiveIndex(index);
-   };
-
-   return (
-      <div className="w-full pt-20 relative overflow-hidden bg-white bg-no-repeat bg-fixed bg-cover bg-center transition-all duration-1000 ease-in-outs" style={{
-         backgroundImage: `url(${slides[activeIndex].image})`
-      }}>
-
-         <div className="w-full h-fit relative">
-            <div className="flex transition-transform duration-700 ease-in-out"
-               style={{
-                  transform: `translateX(-${activeIndex * 100}%)`,
-                  //backgroundImage: `url(${slides[activeIndex].image})`
-               }}
-            >
-               {slides.map((slide, index) => (
-                  <div key={index} className="w-full min-w-full flex flex-col lg:flex-row gap-8 px-20">
-                     <div className={`flex flex-col gap-5 max-w-xl ${activeIndex ? 'text-white' : 'text-black'}`}>
-                        <h1 className="text-4xl md:text-5xl font-bold text-center md:text-start">
-                           {slide.title1}
-                           <span className="text-[#026865]">{slide.title2}</span>
-                        </h1>
-                        <p className={`text-lg text-center md:text-start ${activeIndex ? 'text-white' : 'text-black'}`}>{slide.description}</p>
-                        <div className="flex gap-2 justify-center items-center md:justify-start md:items-start">
-                           <Link href={'/#contacto'} className="py-2 px-4 bg-[#026865] text-white rounded-lg shadow-md hover:opacity-90 transition">Entre em Contacto</Link>
-                        </div>
-                     </div>
-                  </div>
-               ))}
-            </div>
-
-            {/* Indicadores */}
-            <div className="gap-2 flex justify-center mt-28">
-               {slides.map((_, index) => (
-                  <button
-                     key={index}
-                     className={`w-4 h-4 rounded-full cursor-pointer ${index === activeIndex ? 'bg-[#026865]' : 'bg-white'} transition-all duration-700`}
-                     onClick={() => goToSlide(index)}
-                  />
-                  
-               ))}
-            </div>
-            
-            <hr className="mt-10 text-gray-500" />
-
-         </div>
-
-
+         
+                     <img 
+                    src="/images/bg-outlines-fill.png"
+                    width={960}
+                    height={380} 
+                    alt="outline"
+                    className="absolute inset-0 mix-blend-soft-light opacity-5"
+                     />       
       </div>
-   );
-};
+
+      <div className='hero-layout'>
+{/* Left Hero */}
+<header className='flex flex-col justify-center md:w-full w-screen md:px-20 px-5'>
+   <div className='flex flex-col gap-7'>
+      <div className='hero-text'>
+         <h1>
+            Moldando
+         <span className='slide'>
+            <span className = 'wrapper'>
+               {words.map((word, index)=>(
+                  <span key={`${word.text}-${index}`} className='flex items-center md:gap-3 pb-2'>
+                     <img 
+                     src={word.imgPath} 
+                     alt={word.text}
+                     className='xl:size-12 md:size-7 md:p-2 p-1 rounded-full bg-white-50'
+                     />
+                     <span>{word.text}</span>
+                  </span>
+               ))}
+            </span>
+         </span>
+         </h1>
+         <h1>Em Estratégias</h1>
+         <h1>para resultados reais</h1>
+      </div>
+      <p className='text-white-50 md:text-xl relative z-10 pointer-events-none'>
+         Moldamos ideias em projectos que entregam resultados
+      </p>
+      
+      <Button
+      className="md:w-80 md:h-16 w-60 h-12"
+      id='button'
+      text="Nossos Serviços"
+      />
+   </div>
+</header>
+
+{/* Right Side model 3D */}
+<figure>
+   <div className='hero-3d-layout'>
+      <Cube />
+   </div>
+</figure>
+      </div>
+    </section>
+  )
+}
+
