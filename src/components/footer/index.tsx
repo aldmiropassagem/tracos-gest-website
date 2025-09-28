@@ -4,7 +4,7 @@ import ScrollToTopButton from './scroll-to-top-component';
 
 export const Footer = () => {
    return (
-      <footer id='contacto' className='text-white bg-[#026865] px-4 sm:px-6 lg:px-10 py-10 flex flex-col w-full'>
+      <footer id='contact' className='opacity-85 text-white bg-[#026865] px-4 sm:px-6 lg:px-10 py-10 flex flex-col w-full mt-24'>
 
          <div className='flex flex-col lg:flex-row w-full gap-10 lg:gap-20 mb-16'>
             <div className='flex flex-col space-y-2 max-w-sm'>
@@ -17,11 +17,9 @@ export const Footer = () => {
                <div className='flex flex-col gap-2'>
                   <h5 className='font-bold'>Mapa do Site</h5>
                   <ul className='space-y-1 text-sm sm:text-base'>
-                     <li>Página Inicial</li>
+                     <li>Inicio</li>
                      <li>Serviços</li>
                      <li>Eventos</li>
-                     <li>Blog</li>
-                     <li>Contacto</li>
                   </ul>
                </div>
 
@@ -48,7 +46,7 @@ export const Footer = () => {
                      </li>
                      <li className='flex items-center gap-2'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
-                        <span>geral.gest@tracosgroup.com</span>
+                        <span>geral@tracosgroup.com</span>
                      </li>
                   </ul>
                </div>

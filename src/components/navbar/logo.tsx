@@ -8,7 +8,7 @@ export const Logo = () => (
       height={100}
       className='w-16 h-16'
       priority
-      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+      sizes='(max-width: 768px) 50vw, 33vw'
       loading='eager'
       quality={100}
       style={{ objectFit: "cover" }}
