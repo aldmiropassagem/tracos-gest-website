@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { Logo } from './logo'
+import { Logo } from '../navbar/logo'
 import { navLinks } from '@/constante'
 import { Menu } from 'lucide-react'
 import { Dialog, DialogPanel } from '@headlessui/react'

@@ -2,8 +2,7 @@
 
 import { words } from '@/constante'
 import React from 'react'
-import Button from '../Button'
-import Cube from '../models/Cube'
+
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import Image from 'next/image'

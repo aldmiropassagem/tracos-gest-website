@@ -1,3 +1,5 @@
+'use client'
+
 import { ServiceCard } from "@/constante";
 import { ReactNode, useRef } from "react";
 

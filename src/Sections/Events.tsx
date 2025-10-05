@@ -1,11 +1,11 @@
 'use client'
 import React from 'react';
 import Image from 'next/image';
-import TitleHeader from '../TitleHeader';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { event } from '@/constante';
+import TitleHeader from '@/components/TitleHeader';
 
 gsap.registerPlugin(ScrollTrigger)
 

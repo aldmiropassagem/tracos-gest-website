@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import ScrollToTopButton from './scroll-to-top-component';
+import ScrollToTopButton from '@/components/goUpBtn/scroll-to-top-component';
 
 export const Footer = () => {
    return (

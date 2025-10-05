@@ -1,8 +1,10 @@
+import { Eventos } from '@/Sections/Events';
+import { Header } from '@/Sections/Header';
+import { Partners } from '@/Sections/Partners';
+import Services from '@/Sections/Services';
+import { Team } from '@/Sections/Team';
 import type { NextPage } from 'next';
-import { Header } from '../components/header';
-import { Partners } from '../components/partners';
-import { Eventos } from '../components/events';
-import Services from '@/components/services/Services';
+
 //import {Statistics} from '../components/statistics';
 
 const Home: NextPage = () => {
@@ -17,6 +19,8 @@ const Home: NextPage = () => {
         <Services />
 
         <Eventos />
+
+        <Team />
 
         <Partners />
 

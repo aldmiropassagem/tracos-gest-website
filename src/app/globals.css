@@ -325,6 +325,10 @@ section {
   }
 }
 
+ .client-container {
+    @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
+  }
+
 /* Hero text slider starts */
 .slide {
   display: inline-block;
@@ -486,6 +490,56 @@ section {
 
 .spin-slow{
   animation: spin-slow 9s linear infinite;
+}
+
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-col-1 {
+  animation: scroll-up 20s linear infinite;
+}
+
+.animate-col-2 {
+  animation: scroll-up 24s linear infinite;
+}
+
+.animate-col-3 {
+  animation: scroll-up 28s linear infinite;
+}
+
+
+/* pausa no hover */
+.client-col:hover .animate-col-1,
+.client-col:hover .animate-col-2,
+.client-col:hover .animate-col-3 {
+ 
+  animation-play-state: paused;
+}
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-row {
+  animation: scroll-x 25s linear infinite;
+  will-change: transform;
+}
+
+/* pausa no hover (opcional) */
+.client-col:hover .animate-row {
+  animation-play-state: paused;
 }
 
 

@@ -7,6 +7,7 @@ export const navLinks: NavLink[]=[
     {title:"Inicio", href:"/"},
     {title:"Serviços", href:"/#services"},
     {title:"Eventos", href:"/#events"},
+    {title:"Equipa", href:"/#team"},
     {title:"Parceiros", href:"/#partners"},
     {title:"Sobre", href:"/sobre"},
 ]
@@ -35,6 +36,7 @@ export type ServiceCard = {
     logo:string,
     
 };
+
 
 export const serviceCards: ServiceCard[]=[
     {
@@ -215,4 +217,62 @@ export const pilares:Pilar[]=[
     text:"A Traços Gest almeja consolidar-se como líder no mercado de consultoria de gestão e negócios, sendo a escolha preferida das empresas que buscam soluções inovadoras e de alto impacto. A nossa ambição é expandir para novos mercados, oferecendo nossa expertise a uma gama mais ampla de indústrias e adaptando-nos constantemente às mudanças do mercado para continuar a fornecer soluções relevantes e eficazes. Com um olhar no futuro, queremos ser uma empresa reconhecida pela sua capacidade de gerar transformação real e sustentável, criando um legado de sucesso e crescimento para todos os nossos parceiros.",
     review:""
 }
+]
+
+export type Team ={
+    id:number,
+    name:string,
+    img:string,
+    review:string,
+    position:string
+};
+
+export const team:Team[]=[
+    {
+        id:1,
+        name:"Obed René",
+        position:"CEO",
+        review:"O sucesso dos nossos clientes é a medida mais autêntica do nosso próprio sucesso.",
+        img:"/images/review1.png",
+    },
+    
+    {
+        id: 2,
+        name:"Leixa René",
+        position:"Directora Recursos Humanos",
+        review:"O sucesso sustentável nasce de equipes valorizadas, motivadas e alinhadas. Cuidar de pessoas é cuidar do futuro da empresa.",
+        img:"/images/review1.png"
+    },
+
+    {
+        id: 3,
+        name:"Frederico Silva",
+        position:"Director de Operações (COO)",
+        review:"Trabalhamos todos os dias para que as ideias estratégicas da Traços Gest se tornem impacto real — com disciplina, clareza e execução.",
+        img:"/images/review1.png"
+    },
+
+    {
+        id: 4,
+        name:"Alexia Costa",
+        position:"Directora Comercial e Projecto",
+        review:"Acredito que cada cliente é um novo desafio e cada projeto uma chance de superar expectativas com soluções inovadoras e eficazes.",
+        img:"/images/review1.png"
+    },
+
+    {
+        id: 5,
+        name:"Valquíria Ribeiro",
+        position:"Directora de Markting",
+         review:"Acredito no poder das ideias certas, no momento certo, para transformar percepções e gerar valor verdadeiro para a marca.",
+        img:"/images/review1.png"
+    },
+
+    {
+        id: 6,
+        name:"Hercos Fançony",
+        position:"Director de Relações Instituicionais",
+         review:"O diálogo e a parceria estratégica são as ferramentas que fortalecem a presença da Traços Gest e ampliam o nosso impacto no ecossistema empresarial.",
+        img:"/images/review1.png"
+    }
 ]
