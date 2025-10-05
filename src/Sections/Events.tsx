@@ -54,7 +54,7 @@ export const Eventos = () => {
   );
   })
   return (
-    <section id="events" className="flex flex-col  items-center  justify-center w-full pt-40 pb-14 px-4 sm:px-6 lg:px-10 xl:px-20 hero-layout mt-64  bg-black-200">
+    <section id="events" className="flex flex-col  items-center  justify-center w-full pt-40 pb-14 px-4 sm:px-6 lg:px-10 xl:px-20 hero-layout mt-64 radial-gradient">
   <TitleHeader
   title='Eventos'
   />
@@ -66,11 +66,12 @@ export const Eventos = () => {
           className='img flex items-center justify-center w-full max-w-md h-auto'>
             
             <Image
+            
               src="/assets/fipe.png"
               alt="FIPE"
               width={600}
               height={150}
-              className="event-img w-full h-auto object-contain"
+              className="event-img w-full h-auto object-contain bg-white"
               loading="lazy"
               quality={100}
             />

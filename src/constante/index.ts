@@ -249,7 +249,7 @@ export const team:Team[]=[
         name:"Frederico Silva",
         position:"Director de Operações (COO)",
         review:"Trabalhamos todos os dias para que as ideias estratégicas da Traços Gest se tornem impacto real — com disciplina, clareza e execução.",
-        img:"/images/avatar1.jpeg",
+        img:"/images/3.png",
     },
 
     {
@@ -257,7 +257,7 @@ export const team:Team[]=[
         name:"Alexia Costa",
         position:"Directora Comercial e Projecto",
         review:"Acredito que cada cliente é um novo desafio e cada projeto uma chance de superar expectativas com soluções inovadoras e eficazes.",
-        img:"/images/avatar2.jpg"
+        img:"/images/4.png"
     },
 
     {
@@ -265,7 +265,7 @@ export const team:Team[]=[
         name:"Valquíria Ribeiro",
         position:"Directora de Markting",
          review:"Acredito no poder das ideias certas, no momento certo, para transformar percepções e gerar valor verdadeiro para a marca.",
-        img:"/images/avatar2.jpg"
+        img:"/images/avatar5.png"
     },
 
     {
@@ -273,6 +273,6 @@ export const team:Team[]=[
         name:"Hercos Fançony",
         position:"Director de Relações Instituicionais",
          review:"O diálogo e a parceria estratégica são as ferramentas que fortalecem a presença da Traços Gest e ampliam o nosso impacto no ecossistema empresarial.",
-       img:"/images/avatar1.jpeg"
+       img:"/images/avatar6.webp"
     }
 ]

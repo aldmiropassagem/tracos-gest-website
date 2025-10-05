@@ -492,6 +492,14 @@ section {
   animation: spin-slow 9s linear infinite;
 }
 
+@utility radial-gradient {
+    background: radial-gradient(
+            circle at center,
+            #434343 0%,
+            #000000 50%,
+            transparent 100%
+    );
+}
 
 @keyframes scroll-up {
   0% {
