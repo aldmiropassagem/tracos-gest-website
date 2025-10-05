@@ -6,6 +6,8 @@ import React from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import Image from 'next/image'
+import Button from '@/components/Button'
+import Cube from '@/components/models/Cube'
 
 
 export const Header = () => {
